@@ -1,0 +1,6 @@
+(define (square x)
+	(* x x))
+(define (f x y z)
+	(cond ((and (>= x y) (>= z y)) (+ (square z) (square x)))
+		  ((and (>= y z) (>= x z)) (+ (square x) (square y)))
+		  ((and (>= y x) (>= z x)) (+ (square z) (square y)))))
