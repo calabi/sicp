@@ -1,0 +1,38 @@
+Every powerful language has 3 mechanisms:
+- primitive expressions
+- means of combination
+- means of abstraction
+
+
+
+Procedure to evaluate Combinations:
+1. Evaluate subexpressions of the combination.
+2. Apply the procedure that is the value of the leftmost subexpression
+to the arguments that are the values of the other subexpressions.
+
+base cases:
+- the values of numbers are the numerals they name
+- the values of the built-in operators are the machine instruction 
+sequences that carry out the corresponding operations.
+- the values of other names are the objects associated with those
+names in the environment.
+
+We may regard the second case as a special case of the third by 
+stipulating that + and * are also included in the global environment.
+In an interactive language such as Lisp it is meaningless to speak 
+of the value of an expression such as (+ x 1) without specifying 
+any information about the environment which is going to give values
+to these symbols.
+
+Exceptions to the general evaluation rule are called special forms.
+Each special form has its own evaluation rule. The various kinds of 
+expressions and their evaluation rules constitute the syntax of the 
+language.
+
+
+=== The body of a procedure can be a sequence of expressions. In 
+this case the interpreter evaluates the expressions in sequence and 
+returns the value of the final expression as the value of the procedure
+application.
+
+
